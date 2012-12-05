@@ -32,6 +32,7 @@ class Product < ActiveRecord::Base
         return true
       else
         errors.add(:base, 'Line Items present')
+        raise "There are active orders for this item"
         return false
       end
     end
